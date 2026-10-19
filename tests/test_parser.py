@@ -149,3 +149,19 @@ def test_bad_form(login_html, change):
 def test_challenge(login_html, challenge):
     with pytest.raises(InteractiveAuthError):
         parse_login(login_html + challenge, "https://next.ink/auth/login/")
+
+
+@pytest.mark.parametrize(
+    "value,expected",
+    [("1,632", 1632), ("12,345,678", 12345678), ("0", 0), ("1 632", 1632), ("1632", 1632)],
+)
+def test_object_count_grouping(quota_html, value, expected):
+    assert parse_quota(quota_html.replace("16</span>", f"{value}</span>")).object_count == expected
+
+
+@pytest.mark.parametrize(
+    "value", ["1,63", "1,632,00", "1,632 000", "1234,567", "1.632", "1,6", "-1", "1k"]
+)
+def test_invalid_object_grouping(quota_html, value):
+    with pytest.raises(DataError, match="invalid_objects"):
+        parse_quota(quota_html.replace("16</span>", f"{value}</span>"))

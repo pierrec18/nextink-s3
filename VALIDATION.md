@@ -86,3 +86,7 @@ Clearing cookies (if subsequently tested) validates recovery after **session los
 not natural expiration or a measured session lifetime. Never change the real account
 password or disable 2FA to trigger a test. Never deliberately disrupt the whole HA
 instance's network to simulate a single integration failure.
+
+## v0.1.2 object-count format correction
+
+User reported the live object-count text `1,632`. Added strict comma thousands-group parsing (1632), with rejection of malformed and mixed grouping. 110 simulated tests pass, 95% coverage; live entry recovery remains to be verified after deployment.

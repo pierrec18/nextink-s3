@@ -71,9 +71,11 @@ def parse_quota(html: str) -> Quota:
             raise DataError("duplicate_stat")
         text = normalize(texts[0].get_text(" ", strip=True))
         if key == "object_count":
-            if not re.fullmatch(r"[0-9]+(?: [0-9]{3})*", text):
+            if not re.fullmatch(
+                r"(?:[0-9]+|[0-9]{1,3}(?: [0-9]{3})+|[0-9]{1,3}(?:,[0-9]{3})+)", text
+            ):
                 raise DataError("invalid_objects")
-            values[key] = int(text.replace(" ", ""))
+            values[key] = int(text.replace(" ", "").replace(",", ""))
         else:
             values[key] = parse_size(text)
     if set(values) != set(LABELS.values()):
