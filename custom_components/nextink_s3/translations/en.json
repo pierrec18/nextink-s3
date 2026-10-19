@@ -1,0 +1,65 @@
+{
+  "title": "Next.ink S3",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Next.ink S3",
+        "description": "Use native Next.ink credentials (not LPL). Values are estimates from the rounded website display. No S3 access.",
+        "data": {
+          "username": "Username or email",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reconnect Next.ink",
+        "description": "Enter the native Next.ink password. Existing entities will be retained.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Native Next.ink credentials were explicitly rejected.",
+      "cannot_connect": "Cannot connect, access denied or rate limited. Try again later.",
+      "interactive_auth": "CAPTCHA, 2FA or an interactive challenge was detected. Automatic login is unsupported. Do not disable 2FA.",
+      "incompatible_form": "Native login form changed or destination is unsafe. LPL-only accounts are unsupported.",
+      "invalid_statistics": "Storage statistics are missing, unavailable or invalid. Login was not validated."
+    },
+    "abort": {
+      "already_configured": "This login name is already configured.",
+      "reauth_successful": "Reauthentication successful."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling interval",
+        "data": {
+          "interval_hours": "Interval (hours, 1–24)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "used_bytes": {
+        "name": "Used storage"
+      },
+      "available_bytes": {
+        "name": "Available storage"
+      },
+      "total_bytes": {
+        "name": "Total quota"
+      },
+      "object_count": {
+        "name": "Object count"
+      },
+      "percentage": {
+        "name": "Storage usage"
+      },
+      "last_success": {
+        "name": "Last successful update"
+      }
+    }
+  }
+}

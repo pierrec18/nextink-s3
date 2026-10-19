@@ -1,0 +1,65 @@
+{
+  "title": "Next.ink S3",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Next.ink S3",
+        "description": "Utilisez vos identifiants natifs Next.ink (pas LPL). Les valeurs proviennent de l’affichage arrondi du site. Aucun accès S3.",
+        "data": {
+          "username": "Pseudo ou e-mail",
+          "password": "Mot de passe"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reconnecter Next.ink",
+        "description": "Saisissez le mot de passe natif Next.ink. Les entités existantes seront conservées.",
+        "data": {
+          "password": "Mot de passe"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Identifiants natifs Next.ink explicitement refusés.",
+      "cannot_connect": "Connexion impossible, accès refusé ou limite de requêtes. Réessayez plus tard.",
+      "interactive_auth": "CAPTCHA, 2FA ou défi interactif détecté : connexion automatique non prise en charge. Ne désactivez pas le 2FA.",
+      "incompatible_form": "Formulaire natif modifié ou destination non autorisée. Les comptes exclusivement LPL ne sont pas pris en charge.",
+      "invalid_statistics": "Statistiques absentes, indisponibles ou invalides. La connexion n’est pas validée."
+    },
+    "abort": {
+      "already_configured": "Ce nom de connexion est déjà configuré.",
+      "reauth_successful": "Réauthentification réussie."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Actualisation",
+        "data": {
+          "interval_hours": "Intervalle (heures, 1 à 24)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "used_bytes": {
+        "name": "Espace utilisé"
+      },
+      "available_bytes": {
+        "name": "Espace disponible"
+      },
+      "total_bytes": {
+        "name": "Quota total"
+      },
+      "object_count": {
+        "name": "Nombre d’objets"
+      },
+      "percentage": {
+        "name": "Taux d’occupation"
+      },
+      "last_success": {
+        "name": "Dernière mise à jour réussie"
+      }
+    }
+  }
+}

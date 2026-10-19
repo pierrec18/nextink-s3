@@ -1,0 +1,12 @@
+{
+  "domain": "nextink_s3",
+  "name": "Next.ink S3",
+  "codeowners": ["@pierrec18"],
+  "config_flow": true,
+  "documentation": "https://github.com/pierrec18/nextink-s3",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/pierrec18/nextink-s3/issues",
+  "requirements": ["beautifulsoup4==4.15.0"],
+  "version": "0.1.0"
+}
