@@ -1,5 +1,5 @@
 homeassistant==2026.10.2
 pytest-homeassistant-custom-component==0.13.373
-beautifulsoup4==4.15.0
+beautifulsoup4==4.13.3
 ruff==0.17.1
 pytest-cov==7.1.0
