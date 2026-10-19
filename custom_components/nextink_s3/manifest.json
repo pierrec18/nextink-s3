@@ -8,5 +8,5 @@
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/pierrec18/nextink-s3/issues",
   "requirements": ["beautifulsoup4>=4.13.3"],
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

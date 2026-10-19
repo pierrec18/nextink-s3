@@ -1,5 +1,7 @@
 # Next.ink S3 for Home Assistant
 
+![Next.ink](custom_components/nextink_s3/brand/logo.png)
+
 Read-only monitoring of the **rounded storage quota displayed by Next.ink**.
 Unofficial integration; no affiliation with Next.ink, HACS or Home Assistant.
 
