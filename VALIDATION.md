@@ -44,7 +44,7 @@ Covered:
   coordinator; temporary unavailability and recovery; retained last-success timestamp;
   options-triggered reload and cleanup.
 
-Local result: **95 tests passed, 95% statement coverage** (373 statements, 17 not covered),
+Local result: **97 tests passed, 95% statement coverage** (375 statements, 17 not covered),
 with BeautifulSoup **4.13.3** aligned with Home Assistant constraints. Syntax,
 Ruff, HACS action and hassfest are separate checks from the unit/integration suite.
 

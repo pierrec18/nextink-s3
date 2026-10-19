@@ -92,6 +92,8 @@ class NextInkClient:
                         check_challenge(html)
                         if response.status == 403:
                             raise AccessDeniedError("access_denied")
+                        if response.status == 401 and explicit_rejection(html):
+                            raise AuthenticationError("invalid_auth")
                         if response.status in (301, 302, 303, 307, 308):
                             location = response.headers.get("Location")
                             if not location:

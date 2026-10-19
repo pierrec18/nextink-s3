@@ -200,6 +200,24 @@ async def test_timeout_is_sanitized(client, caplog):
     assert "synthetic-password" not in caplog.text
 
 
+async def test_401_with_explicit_rejection(client, login_html):
+    mock, _ = transport(
+        client,
+        [
+            Response(login_html),
+            Response('<div id="login_error">Incorrect password</div>', status=401),
+        ],
+    )
+    with mock, pytest.raises(AuthenticationError):
+        await client.async_fetch()
+
+
+async def test_401_ambiguous_not_bad_password(client):
+    mock, _ = transport(client, [Response("Unknown response", status=401)])
+    with mock, pytest.raises(ConnectionError):
+        await client.async_fetch()
+
+
 @pytest.mark.parametrize("body", ['<input name="totp">', '<div class="cf-turnstile"></div>'])
 async def test_interactive_blocks_retries(client, body):
     mock, calls = transport(client, [Response(body)])
