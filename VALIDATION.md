@@ -44,7 +44,8 @@ Covered:
   coordinator; temporary unavailability and recovery; retained last-success timestamp;
   options-triggered reload and cleanup.
 
-Results and CI references will be recorded with the published release. Syntax,
+Local result: **95 tests passed, 95% statement coverage** (373 statements, 17 not covered),
+with BeautifulSoup **4.13.3** aligned with Home Assistant constraints. Syntax,
 Ruff, HACS action and hassfest are separate checks from the unit/integration suite.
 
 ## Live verification — not yet completed
@@ -55,7 +56,8 @@ The following must not be inferred from simulated tests:
 |---|---|
 | Current HA/Core/HACS version inspected | Passed |
 | Public native form reachable from development host | Passed (GET only) |
-| HACS custom repository add/download | Pending deployment |
+| HACS custom repository registration | Passed: integration category, correct config path |
+| HACS download | Pending deployment |
 | Core restart and integration discovery | Pending deployment |
 | Next.ink access from HA network | Pending |
 | Native account login through local HA form | Pending user credential entry |
