@@ -47,8 +47,9 @@ Covered:
 Local result: **97 tests passed, 95% statement coverage** (375 statements, 17 not covered),
 with BeautifulSoup **4.13.3** aligned with Home Assistant constraints. Syntax,
 Ruff, HACS action and hassfest are separate checks from the unit/integration suite.
+All three CI jobs passed for release commit `d79e59feff51d4ba4e2f2e5d2da0a3d76091a0db`: [CI run](https://github.com/pierrec18/nextink-s3/actions/runs/39320576716).
 
-## Live verification — not yet completed
+## Live verification — installation verified, account validation pending
 
 The following must not be inferred from simulated tests:
 
@@ -57,8 +58,8 @@ The following must not be inferred from simulated tests:
 | Current HA/Core/HACS version inspected | Passed |
 | Public native form reachable from development host | Passed (GET only) |
 | HACS custom repository registration | Passed: integration category, correct config path |
-| HACS download | Pending deployment |
-| Core restart and integration discovery | Pending deployment |
+| HACS download | Passed: v0.1.0 installed, no pending update |
+| Core restart and integration discovery | Passed: Core restarted; native config flow loaded through HA API |
 | Next.ink access from HA network | Pending |
 | Native account login through local HA form | Pending user credential entry |
 | Authenticated quota markup / sensor comparison | Pending account configuration |
@@ -68,6 +69,11 @@ The following must not be inferred from simulated tests:
 | Unload/reload of configured production entry | Pending |
 | Natural session expiration / cookie lifetime | Not observed |
 | Account-specific CAPTCHA/2FA and LPL-only behavior | Not validated |
+
+The actual Home Assistant config flow was opened without credentials to verify import
+and the masked password selector. The expected required-password validation error
+was returned; no Next.ink login was attempted and no account entry was created.
+Visual rendering in the browser has not been independently inspected.
 
 No fabricated credentials were sent to Next.ink. No production HTML, cookies,
 passwords or S3 keys are included in this repository or fixtures. Real credentials
